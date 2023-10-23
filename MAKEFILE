@@ -23,3 +23,19 @@ reconocedor_control.o: reconocedor_control.c reconocedor.h
 
 clean:
 	rm -f main.o reconocedor_automata.o reconocedor_control.o main.exe  Test.o test.exe salida.txt
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+CC = gcc
+CFLAGS = -Wall -g
+
+all: main test
+
+main: main.c reconocedor.c
+    $(CC) $(CFLAGS) -o main main.c reconocedor.c
+
+test: test.c reconocedor.c
+    $(CC) $(CFLAGS) -o test test.c reconocedor.c
+
+clean:
+    rm -f main test
+
