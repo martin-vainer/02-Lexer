@@ -3,12 +3,6 @@ all: main.exe test
 test: test.exe
 	test.exe
 
-test.exe: Test.o reconocedor_automata.o 
-	gcc Test.o reconocedor_automata.o  -o test.exe
-
-Test.o: Test.c reconocedor.h
-	gcc -c Test.c -o Test.o
-
 main.exe: main.o reconocedor_automata.o 
 	gcc main.o reconocedor_automata.o  -o main.exe
 
@@ -18,6 +12,11 @@ main.o: main.c reconocedor.h
 reconocedor_automata.o: reconocedor_automata.c reconocedor.h
 	gcc -c reconocedor_automata.c -o reconocedor_automata.o
 
+test.exe: Test.o reconocedor_automata.o 
+	gcc Test.o reconocedor_automata.o -o test.exe
+
+Test.o: Test.c reconocedor.h
+	gcc -c Test.c -o Test.o
 # reconocedor_control.o: reconocedor_control.c reconocedor.h
 # 	gcc -c reconocedor_control.c -o reconocedor_control.o
 clean:

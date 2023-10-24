@@ -1,5 +1,0 @@
-Analisis de la expresion en la linea 1:
-Caracter  |  Token
------------------
-   123  |  Numero
-
